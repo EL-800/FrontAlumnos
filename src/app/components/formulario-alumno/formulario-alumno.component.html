@@ -1,0 +1,44 @@
+<section>
+    <p-toast></p-toast>
+    <p-card header="Agregar Alumnos">
+        @if(loading === true){
+            <app-spinner-loading></app-spinner-loading>
+        }@else {
+            <div class="form-container">
+                <form class="form" (ngSubmit)="registrarAlumno()">                    
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="nombre" name="nombre" [(ngModel)]="alumno.nombre" />
+                            <label for="username">Nombres</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="paterno" name="paterno" [(ngModel)]="alumno.paterno"  />
+                            <label for="username">Apellido Paterno</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="materno" name="materno" [(ngModel)]="alumno.materno" />
+                            <label for="username">Apellido Materno</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="email" name="email" [(ngModel)]="alumno.email"/>
+                            <label for="username">Correo</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <button type="submit" class="button-submit" [disabled]="submitDisable">
+                            Agregar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        }
+    </p-card>
+</section>
+
+

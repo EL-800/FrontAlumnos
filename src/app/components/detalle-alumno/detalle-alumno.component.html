@@ -1,0 +1,43 @@
+<section>
+    <p-card header="Detalle alumno">
+        @if(loading === true){
+            <app-spinner-loading></app-spinner-loading>
+        }@else {
+            <div class="form-container">
+                <form class="form" (ngSubmit)="editarAlumno()">
+                    <h2 style="display: flex; justify-content: center;">Editar Alumno</h2>
+                    <h4 style=" margin-left: 20px;">ID Alumno : {{alumno.id}}</h4>
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="nombre" name="nombre" [(ngModel)]="alumno.nombre" />
+                            <label for="username">Nombre</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="paterno" name="paterno" [(ngModel)]="alumno.paterno"  />
+                            <label for="username">Apellido Paterno</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="materno" name="materno" [(ngModel)]="alumno.materno" />
+                            <label for="username">Apellido Materno</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <p-floatLabel>
+                            <input pInputText id="email" name="email" [(ngModel)]="alumno.email"/>
+                            <label for="username">Email</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="form-control">
+                        <button type="submit" class="button-submit" [disabled]="submitDisable">
+                            Registrar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        }
+    </p-card>
+</section>

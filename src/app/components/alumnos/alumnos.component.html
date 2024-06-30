@@ -1,0 +1,40 @@
+<section>
+    <p-card header="Alumnos">
+        <p-messages closable="false"></p-messages>        
+        @if(loading === true)
+        {
+            <app-spinner-loading ></app-spinner-loading>
+        }@else
+        {
+            <p-table [value]="alumnos" [tableStyle]="{ 'min-width': '50rem', 'margin-top': '1rem' }" [paginator]="true" [rows]="5"
+                [rowsPerPageOptions]="[5, 10, 20]">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>ID Alumno</th>
+                        <th>Nombre</th>
+                        <th>Paterno</th>
+                        <th>Materno</th>
+                        <th>Email</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-alumno>
+                    <tr>
+                        <td>{{alumno.id}}</td>
+                        <td>{{alumno.nombre}}</td>
+                        <td>{{alumno.paterno}}</td>
+                        <td>{{alumno.materno}}</td>
+                        <td>{{alumno.email}}</td>
+                        <td><p-button icon="pi pi-pencil" (onClick)="detalleAlumno(alumno.id)"></p-button></td>
+                        <td><p-button [style]="{'background-color':'red', 'border-color':'red'}" icon="pi pi-eraser" (onClick)="borrarAlumno(alumno.id)"></p-button></td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                    <td colspan="5" style="text-align:center">No hay registros disponibles</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        }
+        <p-button label="Agregar" icon="pi pi-plus" rounded="true" (onClick)="redirectoToFormAlumno()"></p-button>
+    </p-card>
+</section>

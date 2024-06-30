@@ -1,0 +1,14 @@
+.operaciones{
+    border: 1px solid;
+    border-top: .7px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    width: 20rem ;
+    padding-top: 5px;
+}
+
+li{
+    margin-top: 5px;
+}
